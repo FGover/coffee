@@ -1,0 +1,24 @@
+<view class="login">
+  <view class="title">欢迎回来!</view>
+  <view class="title-two">Please login to your accounts</view>
+  <view class="form">
+    <van-cell-group>
+      <van-field clearable model:value="{{ phone }}" label="手机号" placeholder="请输入手机号" label-class="label" confirm-type="done" bindconfirm='login' />
+      <van-field clearable password model:value="{{ password }}" label="密码" placeholder="密码必须为字母开头" label-class="label" confirm-type="done" bindconfirm='login' />
+    </van-cell-group>
+  </view>
+  <view class="forget" bindtap="findPass">忘记密码?</view>
+  <view class="login-btn" bindtap="login">登录</view>
+  <view class="register-btn" bindtap="showPopup">注册</view>
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 60%;" bind:close="onClose">
+    <view class="reg-box">
+      <view class="reg-title">欢迎注册</view>
+      <view class="form">
+        <van-cell-group>
+          <van-field clearable wx:for="{{regArr}}" wx:key="index" data-id="{{index}}" value="{{ item.value }}" label="{{item.text}}" placeholder="{{item.text}}" label-class="label" bind:change="onChange" error-message="{{item.erroMsg}}" confirm-type="done" bindconfirm='login' />
+        </van-cell-group>
+      </view>
+      <view class="register" bindtap="register">注册</view>
+    </view>
+  </van-popup>
+</view>

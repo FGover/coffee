@@ -1,0 +1,41 @@
+.find {
+  padding: 0 20rpx;
+}
+
+.title {
+  font-size: 56rpx;
+  font-weight: bold;
+  margin: 50rpx 0;
+}
+
+.title-two {
+  font-weight: bold;
+}
+
+.form {
+  margin: 50rpx 0;
+}
+
+.bottom {
+  display: flex;
+}
+
+.label {
+  font-weight: bold !important;
+  color: black !important;
+}
+
+.txt {
+  font-size: 28rpx;
+  text-align: right;
+  padding: 20rpx 0;
+}
+
+.next,
+.submit {
+  margin-top: 20rpx;
+}
+
+.btn {
+  background-color: #0c34ba !important;
+}

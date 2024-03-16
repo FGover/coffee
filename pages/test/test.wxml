@@ -1,0 +1,43 @@
+<!-- 顶部蓝色背景 -->
+<view class="bgblue">
+
+</view>
+<!-- 页面背景灰色 -->
+<view class="mainbg">
+
+</view>
+
+<!-- 用户的资料 -->
+<view class="userdata">
+    <view class="list">
+        <view class="img">
+            <text>头像</text>
+            <view>
+                <!-- <van-uploader show-upload="{{false}}" file-list="{{ fileList }}" bind:after-read="afterRead" max-count="1" deletable="{{false}}" preview-size="50px"> -->
+                <image src="{{mineobj.userImg}}" bindtap="afterRead"></image>
+            <!-- </van-uploader> -->
+            </view>
+
+        </view>
+        <view>
+            <text>用户id</text>
+            <text>xxxxxxxxxxxxxxxx</text>
+        </view>
+        <view>
+            <text>昵称</text>
+            <!-- <text wx:if="{{mineobj.nickName=='undefined'?true:false}}">还没有昵称</text> -->
+            <input type="text" model:value="{{nickName}}" bindtap="empty"/>
+            <!-- <text wx:if="{{mineobj.nickName=='undefined'?false:true}}">{{mineobj.nickName}}</text> -->
+        </view>
+        <view>
+            <text>简介</text>
+            <text wx:if="{{mineobj.desc==''?true:false}}">还没有简介</text>
+            <text wx:if="{{mineobj.desc==''?false:true}}">{{mineobj.desc}}</text>
+        </view>
+
+        <view class="btn">
+            <button bindtap="save">保存修改</button>
+            <button bindtap="nosave">取消修改</button>
+        </view>
+    </view>
+</view>

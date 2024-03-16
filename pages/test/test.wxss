@@ -1,0 +1,13 @@
+/* 样式 */
+.top {
+  display: flex;
+  
+}
+
+.top-left {
+  flex: 1;
+}
+
+.top-right {
+  flex: 1;
+}

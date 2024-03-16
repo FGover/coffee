@@ -1,0 +1,24 @@
+<view class="newadd">
+  <view class="top">
+    <van-cell-group>
+      <van-field clearable model:value="{{ name }}" label="姓名" placeholder="收货人姓名" />
+      <van-field clearable model:value="{{ phone }}" label="电话" placeholder="收货人手机号" />
+      <van-field clearable model:value="{{ area }}" label="地区" placeholder="选择省 / 市 / 区" right-icon="arrow" bind:click-icon="onPopup"/>
+      <van-field clearable model:value="{{ addressDetail }}" label="详细地址" placeholder="街道门牌、楼层房间号等信息" />
+      <van-field clearable model:value="{{ postalCode }}" label="邮政编码" placeholder="邮政编码" />
+    </van-cell-group>
+    <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
+      <van-area area-list="{{ areaList }}" value="{{ areaCode }}" bind:confirm="confirm" bind:cancel="cancel" />
+    </van-popup>
+  </view>
+  <view class="bottom">
+    <van-cell-group>
+      <van-cell title="设置默认收货地址" use-label-slot>
+        <van-switch checked="{{ checked }}" active-color="#0c34ba" size="22px" bind:change="onChange" />
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <view class="save">
+    <van-button round size="large" type="primary" custom-class="btn" bindtap="saveAdd">保存地址</van-button>
+  </view>
+</view>

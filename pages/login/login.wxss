@@ -1,0 +1,70 @@
+.login {
+  padding: 0 20rpx;
+}
+
+.title {
+  font-size: 56rpx;
+  font-weight: bold;
+  margin: 50rpx 0;
+}
+
+.title-two {
+  font-weight: bold;
+}
+
+.form {
+  margin: 30rpx 0;
+}
+
+.label {
+  font-weight: bold !important;
+  color: black !important;
+}
+
+.forget {
+  font-size: 26rpx;
+  font-weight: bold;
+  margin: 20rpx 10rpx 0 0;
+  text-align: right;
+}
+
+.login-btn{
+  color: #fff;
+  background-color: #1832b2;
+  padding: 25rpx 0;
+  text-align: center;
+  border-radius: 40rpx;
+  margin: 30rpx 0;
+  font-weight: bold;
+}
+
+.register-btn {
+  padding: 25rpx 0;
+  text-align: center;
+  border-radius: 40rpx;
+  margin: 30rpx 0;
+  font-weight: bold;
+  margin-top: 40rpx;
+  border: 1px solid #999;
+}
+
+.reg-box {
+  padding: 0 20rpx;
+}
+
+.reg-title {
+  text-align: center;
+  font-size: 48rpx;
+  font-weight: bold;
+  margin: 20rpx 0;
+}
+
+.register {
+  color: #fff;
+  background-color: #1832b2;
+  padding: 25rpx 0;
+  text-align: center;
+  border-radius: 40rpx;
+  margin: 30rpx 0;
+  font-weight: bold;
+}

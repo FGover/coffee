@@ -1,0 +1,24 @@
+<view class="address">
+  <view class="top-bg"></view>
+  <!-- 卡片 -->
+  <view class="card">
+    <view class="card-item" wx:for="{{ addList }}" wx:key="{{ index }}">
+      <view class="left">
+        <view class="top">
+          <view class="name">{{ item.name }}</view>
+          <view class="phone">{{ item.tel }}</view>
+          <view class="moren" wx:if="{{ item.isDefault }}">默认</view>
+        </view>
+        <view class="bottom">{{ item.province + item.city + item.county + item.addressDetail }}</view>
+      </view>
+      <view class="right">
+        <!-- <van-icon data-id="{{ item.aid }}" name="edit" bindtap="edit"/> -->
+        <van-icon data-id="{{ index }}" name="edit" bindtap="edit"/>
+      </view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="foot">
+    <van-button size="large" round type="info" custom-class="btn" bind:click="add">新增地址</van-button>
+  </view>
+</view>

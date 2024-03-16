@@ -1,0 +1,44 @@
+<view class="home">
+  <!-- 导航栏 -->
+  <view class="nav">
+    <view class="nav-left">
+      <view class="hello">{{time}}</view>
+      <view class="username">{{user.nickName}}</view>
+    </view>
+    <view class="nav-right">
+      <van-search value="{{ value }}" shape="round" background="#fff" placeholder="请输入商品名称" bind:search="search" bind:change="change" />
+      <van-popup overlay="{{ false }}" custom-class="pop" show="{{ show }}" position="top" custom-style="height: 40%;">
+        <view class="pop-item" data-pid="{{ item.pid }}" wx:for="{{ searchList }}" wx:key="{{ index }}" bindtap="toDetail">
+          <view class="pop-name">{{ item.name }}</view>
+        </view>
+      </van-popup>
+    </view>
+
+  </view>
+  <!-- 轮播图 -->
+  <view class="banner">
+    <swiper autoplay circular interval="2000" indicator-dots indicator-color="#f9f9f9" indicator-active-color="#0b33b9" vertical="{{false}}">
+      <swiper-item data-pid="{{ item.pid }}" wx:for="{{ bannerList }}" wx:key="{{ index }}" bindtap="toDetail">
+        <image class="banner-img" src="{{item.bannerImg}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 热卖推荐 -->
+  <view class="hot">
+    <view class="hot-bg">
+      <view class="hot-title">热卖推荐</view>
+      <van-button custom-class="btn" type="info" size="small" bind:click="loginOut" round>退出登录</van-button>
+    </view>
+    <view class="hot-list">
+      <view class="hot-item" data-pid="{{item.pid}}" bindtap="toDetail" wx:for="{{hotList}}" wx:key="index">
+        <view class="hot-icon">hot</view>
+        <view class="item-img">
+          <image src="{{item.smallImg}}"></image>
+        </view>
+        <view class="name">{{item.name}}</view>
+        <view class="enname">{{item.enname}}</view>
+        <view class="price">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

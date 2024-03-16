@@ -1,0 +1,17 @@
+<view class="myCollect">
+  <view class="top-bg"></view>
+  <!-- 卡片 -->
+  <view class="card">
+    <view class="item" wx:for="{{ collectList }}" wx:key="{{ index }}">
+      <view class="img">
+        <image src="{{ item.smallImg }}"></image>
+      </view>
+      <view class="name">{{ item.name }}</view>
+      <view class="enname">{{ item.enname }}</view>
+      <view class="bottom">
+        <view class="price">￥{{ item.price }}</view>
+        <van-icon data-pid="{{ item.pid }}" name="delete-o" bindtap="cancel" />
+      </view>
+    </view>
+  </view>
+</view>

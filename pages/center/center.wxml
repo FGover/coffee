@@ -1,0 +1,27 @@
+<view class="center">
+  <view class="top-bg"></view>
+  <!-- 卡片 -->
+  <view class="card">
+    <view class="top" bindtap="updatePass">
+      <view class="pass">修改密码</view>
+      <van-icon name="arrow" />
+    </view>
+    <van-popup
+      show="{{ show }}"
+      position="bottom"
+      custom-style="height: 40%;"
+      bind:close="onClose"
+    >
+      <view class="txt">修改密码</view>
+      <van-field model:value="{{ oldpassword }}" label="旧密码" placeholder="旧密码" label-class="label" />
+      <van-field password model:value="{{ newpassword }}" label="新密码" placeholder="密码必须为字母开头" label-class="label" />
+      <van-button type="info" size="large" custom-class="submit" round bind:click="submit">提交</van-button>
+    </van-popup>
+    <view class="bottom" bindtap="out">
+      <view class="loginOut">注销账号</view>
+      <van-icon name="arrow" />
+    </view>
+    <van-dialog id="van-dialog" />
+    <van-button bind:click="loginout" type="info" size="large" round custom-class="btn">退出登录</van-button>
+  </view>
+</view>

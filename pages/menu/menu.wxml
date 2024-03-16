@@ -1,0 +1,45 @@
+<view class="menu">
+  <!-- 顶部搜索栏 -->
+  <view class="top">
+    <van-search value="{{ value }}" custom-class="search" shape="round" background="#fff" placeholder="请输入商品名称" bind:search="search" bind:change="change" />
+  </view>
+  <!-- 图标 -->
+  <view wx:if="{{ show }}" class="mid">
+    <view class="mid-left">
+      <view class="left" bindtap="change1">
+        <image wx:if="{{ checked1 }}" src="../../images/icons_22.png"></image>
+        <image wx:if="{{ !checked1 }}" src="../../images/icons_11.gif"></image>
+        <view class="text">水果茶</view>
+      </view>
+      <view class="right" bindtap="change2">
+        <image wx:if="{{ !checked2 }}" src="../../images/icons_05.gif"></image>
+        <image wx:if="{{ checked2 }}" src="../../images/icons_19.gif"></image>
+        <view class="text">拿铁</view>
+      </view>
+    </view>
+    <view class="mid-right">
+      <view class="left" bindtap="change3">
+        <image wx:if="{{ !checked3 }}" src="../../images/icons_03.gif"></image>
+        <image wx:if="{{ checked3 }}" src="../../images/icons_18.gif"></image>
+        <view class="text">咖啡</view>
+      </view>
+      <view class="right" bindtap="change4">
+        <image wx:if="{{ !checked4 }}" src="../../images/icons_07.gif"></image>
+        <image wx:if="{{ checked4 }}" src="../../images/icons_20.gif"></image>
+        <view class="text">瑞纳冰</view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品栏 -->
+  <view class="bottom" data-pid="{{ item.pid }}" wx:for="{{ hotList }}" wx:key="{{index}}" bindtap="toDetail">
+    <view class="b-left">
+      <image src="{{hotList[index].smallImg}}"></image>
+    </view>
+    <view class="b-mid">
+      <view class="name">{{hotList[index].name}}</view>
+      <view class="enname">{{hotList[index].enname}}</view>
+    </view>
+    <view class="b-right">￥{{hotList[index].price}}</view>
+  </view>
+
+</view>

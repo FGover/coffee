@@ -1,0 +1,22 @@
+.address {
+  background-color: #f7f7f7;
+}
+
+.top {
+  margin: 30rpx;
+  background-color: #fff;
+}
+
+.bottom {
+  padding: 0 20rpx;
+}
+
+.save {
+  margin-top: 60rpx;
+  padding: 0 30rpx;
+}
+
+.btn {
+  background-color: #0c34ba !important;
+  border: #0c34ba !important;
+}

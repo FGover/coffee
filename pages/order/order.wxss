@@ -1,0 +1,196 @@
+.order {
+  background-color: #f7f7f7;
+}
+
+.address {
+  height: 200rpx;
+  margin: 20rpx;
+  background-color: #fff;
+}
+
+.add-top {
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+
+.top {
+  display: flex;
+  padding: 20rpx;
+}
+
+.name {
+  color: #0c34ba;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.phone {
+  margin-left: 30rpx;
+}
+
+.moren {
+  width: 70rpx;
+  height: 30rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 20rpx;
+  background-color: #0c34ba;
+  margin-left: 30rpx;
+  margin-top: 7rpx;
+}
+
+.bottom {
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: rgba(204, 204, 204, 0.966);
+}
+
+
+.orderdesc {
+  margin: 20rpx;
+  background-color: #fff;
+}
+
+.title {
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.c-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-right: 20rpx;
+}
+
+.c-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 40rpx;
+}
+
+.c-item:nth-child(-n+3) {
+  border-bottom: 1rpx solid #ccc;
+}
+
+.txt {
+  height: 30%;
+}
+
+.orderdesc {
+  height: 650rpx;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  border-bottom: 2rpx dashed #ccc;
+  overflow: auto;
+}
+
+.order-item {
+  display: flex;
+  padding: 0 20rpx 20rpx;
+}
+
+.order-left {
+  flex: 1;
+  height: 150rpx;
+}
+
+.order-left>image {
+  width: 100%;
+  height: 100%;
+}
+
+.order-right {
+  flex: 3;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-top {
+  display: flex;
+  align-items: center;
+}
+
+.Name {
+  font-size: 28rpx;
+}
+
+.rule {
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: rgba(204, 204, 204, 0.959);
+}
+
+.enname {
+  margin-top: 2rpx;
+  font-size: 24rpx;
+  color: rgba(204, 204, 204, 0.959);
+}
+
+.right-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  margin-top: 30rpx;
+  font-weight: bold;
+  font-size: 24rpx;
+  color: #0c34ba;
+}
+
+.count {
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  font-size: 24rpx;
+  color: rgba(22, 21, 21, 0.493);
+}
+
+.jiesuan {
+  padding: 0 20rpx;
+  margin: 0 20rpx;
+  margin-top: -20rpx;
+  background-color: #fff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+
+.time {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+}
+
+.sum {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+}
+
+.sum-left {
+  font-size: 28rpx;
+}
+
+.sum-right {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #0c34ba;
+}
+
+.btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 30rpx;
+  margin: auto;
+  width: 88%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  background-color: #0c34ba;
+  border-radius: 40rpx;
+}

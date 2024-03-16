@@ -1,0 +1,48 @@
+<view class="person">
+  <view class="top-bg"></view>
+  <!-- 卡片 -->
+  <view class="card">
+    <view class="card-item">
+      <view class="userImg" bindtap="uploadImg">
+        <view class="txt">头像</view>
+        <image src="{{ userImg }}"></image>
+      </view>
+      <view class="userId">
+        <view class="txt">用户id</view>
+        <view class="id">{{ userId }}</view>
+      </view>
+      <view class="nickName" bindtap="reName">
+        <view class="txt">昵称</view>
+        <view wx:if="{{ !nickName }}" class="name">还没有昵称</view>
+        <view wx:if="{{ nickName }}" class="name">{{ nickName }}</view>
+      </view>
+      <van-dialog
+          use-slot
+          title="请输入您的新昵称"
+          show="{{ show1 }}"
+          show-cancel-button
+          confirm-button-open-type
+          bind:close="onClose"
+          bind:confirm="onRename"
+        >
+        <van-field model:value="{{ nickName }}"/>
+      </van-dialog>
+      <view class="desc" bindtap="reDesc">
+        <view class="txt">简介</view>
+        <view wx:if="{{ !desc }}" class="value">这个人很懒，什么也没留下!</view>
+        <view wx:if="{{ desc }}" class="value">{{ desc }}</view>
+      </view>
+      <van-dialog
+          use-slot
+          title="请输入您的简介"
+          show="{{ show2 }}"
+          show-cancel-button
+          confirm-button-open-type
+          bind:close="onClose"
+          bind:confirm="onDesc"
+        >
+        <van-field model:value="{{ desc }}"/>
+      </van-dialog>
+    </view>
+  </view>
+</view>

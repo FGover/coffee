@@ -1,0 +1,40 @@
+<view class="cart">
+  <view class="edit" wx:if="{{ show }}" bindtap="edit">编辑</view>
+  <view class="done" wx:if="{{ !show }}" bindtap="done">完成</view>
+  <view class="top-bg">
+    <image src="../../images/shopbag_bg.png"></image>
+  </view>
+  <!-- 购物车商品 -->
+  <view class="cart-list">
+    <view wx:if="{{ show2 }}" class="txt">^_^哎呀，没有数据可加载了！</view>
+    <view wx:if="{{ !show2 }}" class="cart-item" wx:for="{{cartList}}" wx:key="{{index}}">
+      <van-checkbox-group value="{{ result }}" bind:change="onChangeson">
+        <van-checkbox name="{{item.sid}}" checked-color="#0c34ba"></van-checkbox>
+      </van-checkbox-group>
+      <view class="cart-info">
+        <view class="info-img">
+          <image src="{{item.small_img}}"></image>
+        </view>
+        <view class="info-intro">
+          <view class="name">{{item.name}}</view>
+          <view class="enname">{{item.enname}}</view>
+          <view class="price">￥{{item.price}}</view>
+        </view>
+      </view>
+      <van-stepper data-data="{{item}}" value="{{item.count}}" theme="round" button-size="22" plus-class="plus" minus-class="minus" bind:plus="plus" bind:minus="minus" />
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class="foot">
+    <view class="one" wx:if="{{ show }}">
+      <van-submit-bar data-id="{{ result }}" price="{{ okprice }}" button-text="提交订单" bind:submit="onSubmit" button-class="btn" price-class="price">
+      <van-checkbox value="{{ checked }}" checked-color="#0c34ba" bind:change="onChange">全选</van-checkbox>
+    </van-submit-bar>
+    </view>
+    <view class="two" wx:if="{{ !show }}">
+      <van-submit-bar button-text="删除选择" bind:submit="onDelete"  price-class="price">
+      <van-checkbox custom-class="select" value="{{ checked }}" checked-color="#ee0a24" bind:change="onChange">全选</van-checkbox>
+    </van-submit-bar>
+    </view>
+  </view>
+</view>

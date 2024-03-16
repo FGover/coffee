@@ -1,0 +1,30 @@
+<view class="find">
+  <view class="title">找回密码!</view>
+  <view class="title-two">Find password</view>
+  <view class="form" wx:if="{{show}}">
+    <van-cell-group>
+      <van-field clearable model:value="{{ email }}" label="邮箱" placeholder="邮箱" label-class="label" error-message="{{ erroMsg }}" bind:change="onChange"/>
+      <view class="bottom">
+        <van-field clearable model:value="{{ code }}" label="验证码" placeholder="验证码(6个字符)" label-class="label" />
+      <van-button custom-class="btn" type="info" size="small" bind:click="send">发送</van-button>
+      </view>
+    </van-cell-group>
+    <view class="txt" bindtap="toLogin">已有账号，立即登录</view>
+    <view class="next">
+      <van-button custom-class="btn" type="info" size="large" round bind:click="next">下一步</van-button>
+    </view>
+  </view>
+  <view class="form" wx:if="{{ !show }}">
+    <van-cell-group>
+      <van-field clearable model:value="{{ phone }}" label="手机号" placeholder="手机号" label-class="label" />
+      <view class="bottom">
+        <van-field clearable password model:value="{{ password }}" label="密码" placeholder="密码必须为字母开头" error-message="{{ errMsg }}" label-class="label"
+        bind:change="change" />
+      </view>
+    </van-cell-group>
+    <view class="txt" bindtap="toLogin">已有账号，立即登录</view>
+    <view class="submit">
+      <van-button custom-class="btn" type="info" size="large" round bind:click="submit">提交</van-button>
+    </view>
+  </view>
+</view>

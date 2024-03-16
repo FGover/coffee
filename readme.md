@@ -1,0 +1,10 @@
+pages -- 页面文件夹
+  index -- 首页文件夹
+    index.js -- 页面业务逻辑
+    index.json -- 页面配置文件
+    index.wxml -- 页面布局
+    index.wxss -- 页面样式文件
+elintrc.js -- 限制代码格式规范
+app.js -- 应用业务逻辑
+app.json -- 全局配置
+app.wxss -- 全局样式文件

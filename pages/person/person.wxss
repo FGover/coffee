@@ -1,0 +1,44 @@
+.person {
+  position: relative;
+  background-color: #f7f7f7;
+}
+
+.top-bg {
+  width: 750rpx;
+  height: 200rpx;
+  background-color: #0c34ba;
+}
+
+.card {
+  position: absolute;
+  width: 88%;
+  height: 100rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  top: 150rpx;
+  left: 3%;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.userImg,
+.userId,
+.nickName,
+.desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.userImg>image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.value {
+  font-size: 28rpx;
+}

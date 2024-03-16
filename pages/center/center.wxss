@@ -1,0 +1,49 @@
+.center {
+  position: relative;
+  background-color: #f7f7f7;
+}
+
+.top-bg {
+  width: 750rpx;
+  height: 200rpx;
+  background-color: #0c34ba;
+}
+
+.card {
+  position: absolute;
+  width: 88%;
+  height: 100rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  top: 150rpx;
+  left: 3%;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.top {
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.top,
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.btn {
+  background-color: #0c34ba !important;
+  margin-top: 100rpx;
+}
+
+.txt {
+  padding: 20rpx;
+  font-weight: bold;
+}
+
+.submit {
+  background-color: #0c34ba !important;
+  margin-top: 40rpx;
+}

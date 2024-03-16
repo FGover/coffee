@@ -1,0 +1,93 @@
+<view class="order">
+  <!-- 地址 -->
+  <view class="address">
+    <view class="add-top" bindtap="select">选择地址 ></view>
+    <view class="add-bottom">
+      <view class="left">
+        <view class="top">
+          <view class="name">{{ addList.name }}</view>
+          <view class="phone">{{ addList.tel }}</view>
+          <view class="moren" wx:if="{{ addList.isDefault }}">默认</view>
+        </view>
+        <view class="bottom">{{ addList.province + addList.city + addList.county + addList.addressDetail }}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出层 -->
+  <van-popup bind:close="onClose" show="{{ show }}" position="bottom" custom-style="height: 50%;">
+    <view class="c-top">
+      <view class="title">选择地址</view>
+      <van-icon name="cross" custom-class="icon" bindtap="onClose" />
+    </view>
+    <view class="c-item" wx:for="{{ AddList }}" wx:key="{{ index }}">
+      <van-checkbox wx:if="{{ item.isDafault }}" data-aid="{{ item.aid }}" value="{{ item.isChecked }}" bind:change="onChange" checked-color="#0c34ba"></van-checkbox>
+      <van-checkbox wx:if="{{ !item.isDafault }}" data-aid="{{ item.aid }}" value="{{ item.isChecked }}" bind:change="onChange" checked-color="#0c34ba"></van-checkbox>
+      <view class="left">
+        <view class="top">
+          <view class="name">{{ item.name }}</view>
+          <view class="phone">{{ item.tel }}</view>
+          <view class="moren" wx:if="{{ item.isDefault }}">默认</view>
+        </view>
+        <view class="bottom">{{ item.province + item.city + item.county + item.addressDetail }}</view>
+      </view>
+    </view>
+    <!-- 占空白位置 -->
+    <view class="txt"></view>
+    <view class="btn" bindtap="add">新增地址</view>
+  </van-popup>
+  <!-- 订单信息1 -->
+  <view class="orderdesc" wx:if="{{ !pid }}">
+    <view class="title">订单信息</view>
+    <view class="order-item" wx:for="{{ List }}" wx:key="{{ index }}">
+      <!-- 左边图片 -->
+      <view class="order-left">
+        <image src="{{ item.small_img }}"></image>
+      </view>
+      <!-- 右边信息 -->
+      <view class="order-right">
+        <view class="right-top">
+          <view class="Name">{{ item.name }}</view>
+          <view class="rule">{{ item.rule }}</view>
+        </view>
+        <view class="enname">{{ item.enname }}</view>
+        <view class="right-bottom">
+          <view class="price">￥{{ item.price }}</view>
+          <view class="count">x{{ item.count }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 订单信息2 -->
+  <view class="orderdesc" wx:if="{{ pid }}">
+    <view class="title">订单信息</view>
+    <view class="order-item">
+      <!-- 左边图片 -->
+      <view class="order-left">
+        <image src="{{ buyList.small_img }}"></image>
+      </view>
+      <!-- 右边信息 -->
+      <view class="order-right">
+        <view class="right-top">
+          <view class="Name">{{ buyList.name }}</view>
+          <view class="rule">{{ rule }}</view>
+        </view>
+        <view class="enname">{{ buyList.enname }}</view>
+        <view class="right-bottom">
+          <view class="price">￥{{ buyList.price }}</view>
+          <view class="count">x{{ goodnum }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 结算 -->
+  <view class="jiesuan">
+    <view class="time">{{ time }}</view>
+    <view class="sum">
+      <view class="sum-left" wx:if="{{ !pid }}">共计{{ count }}件</view>
+      <view class="sum-left" wx:if="{{ pid }}">共计{{ goodnum }}件</view>
+      <view class="sum-right" wx:if="{{ !pid }}">合计 ￥{{ sum }}</view>
+      <view class="sum-right" wx:if="{{ pid }}">合计 ￥{{ buyList.price * goodnum }}</view>
+    </view>
+  </view>
+  <view class="btn" bindtap="settle">立即结算</view>
+</view>

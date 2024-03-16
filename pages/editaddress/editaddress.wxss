@@ -1,0 +1,34 @@
+.editaddress {
+  height: 1334rpx;
+  background-color: #f7f7f7;
+}
+
+.top {
+  margin: 30rpx;
+  background-color: #fff;
+}
+
+.bottom {
+  padding: 0 20rpx;
+}
+
+.save {
+  width: 88%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  background-color: #0c34ba;
+  border-radius: 50rpx;
+  margin: 6%;
+}
+
+.del {
+  width: 88%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: #fff;
+  border-radius: 50rpx;
+  margin: 6%;
+}

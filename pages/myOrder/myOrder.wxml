@@ -1,0 +1,54 @@
+<view class="myOrder">
+  <view class="top-bg"></view>
+  <!-- 卡片 -->
+  <view class="card1">
+    <!-- 顶部切换栏 -->
+    <view class="my-top">
+      <view class="all" bindtap="all">全部</view>
+      <view class="ing" bindtap="ing">进行中</view>
+      <view class="done" bindtap="done">已完成</view>
+    </view>
+    <view class="three">
+      <view wx:if="{{ checked }}" class="line1"></view>
+      <view wx:if="{{ checked2 }}" class="line2"></view>
+      <view wx:if="{{ checked3 }}" class="line3"></view>
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class="card2" wx:if="{{ checked || checked2 || checked3 }}" wx:for="{{ List }}" wx:for-item="fg" wx:key="{{ index }}">
+    <view class="myorder">
+      <view class="title">
+        <view class="oid">{{ fg[0].oid }}</view>
+        <view wx:if="{{ fg[0].status == 1 || checked2 }}" data-oid="{{ fg[0].oid }}" class="confirm" bindtap="confirm">确认收货</view>
+        <view wx:if="{{ fg[0].status == 2 || checked3 }}" data-oid="{{ fg[0].oid }}" class="confirm">已完成
+          <van-icon name="delete-o" bindtap="delete" />
+        </view>
+      </view>
+      <view wx:if="{{ index < fg.length-1 }}" class="order-item" wx:for="{{ fg }}" wx:key="index">
+        <!-- 左边图片 -->
+        <view class="order-left">
+          <image src="{{ item.smallImg }}"></image>
+        </view>
+        <!-- 右边信息 -->
+        <view class="order-right">
+          <view class="right-top">
+            <view class="Name">{{ item.name }}</view>
+            <view class="rule">{{ item.rule }}</view>
+          </view>
+          <view class="enname">{{ item.enname }}</view>
+          <view class="right-bottom">
+            <view class="price">￥{{ item.price }}</view>
+            <view class="count">x{{ item.count }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="card3">
+      <view class="time">{{ fg[0].updatedAt }}</view>
+      <view class="sum">
+        <view class="sum-left">共计{{ fg[fg.length-1].sum }}件</view>
+        <view class="sum-right">合计￥{{ fg[fg.length-1].okprice + '.00' }}</view>
+      </view>
+    </view>
+  </view>
+</view>

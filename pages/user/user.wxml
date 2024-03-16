@@ -1,0 +1,25 @@
+<view class="user">
+  <!-- 用户背景图 -->
+  <view class="top-bg">
+    <image src="{{user.userBg}}" bindtap="uploadBg"></image>
+  </view>
+  <!-- 用户卡片 -->
+  <view class="card">
+    <view class="card-top">
+      <!-- 用户头像 -->
+      <view class="userImg">
+        <image src="{{user.userImg}}"></image>
+      </view>
+      <view class="user-desc">
+        <view class="nickName">{{user.nickName}}</view>
+        <view class="desc">{{ user.desc }}</view>
+      </view>
+    </view>
+    <view class="card-bottom">
+      <view class="row" wx:for="{{obj}}" wx:key="{{index}}" data-id="{{index}}" bindtap="find">
+        <view class="row-desc">{{item}}</view>
+        <van-icon name="arrow" />
+      </view>
+    </view>
+  </view>
+</view>

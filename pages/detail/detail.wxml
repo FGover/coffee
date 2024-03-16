@@ -1,0 +1,70 @@
+<view class="detail">
+  <!-- 顶部背景图 -->
+  <view class="top-bg">
+    <image src="{{detailData.large_img}}"></image>
+  </view>
+  <!-- 商品卡片 -->
+  <view class="card">
+    <!-- 卡片商品名称价格 -->
+    <view class="intro">
+      <view class="intro-left">
+        <view class="il-top">{{detailData.name}}</view>
+        <view class="il-bottom">{{detailData.enname}}</view>
+      </view>
+      <view class="intro-right">￥{{detailData.price}}</view>
+    </view>
+    <!-- 卡片商品规格 -->
+    <view class="rule">
+    <!-- 温度 -->
+     <view class="rule-tem" wx:if="{{tem.length >= 1}}">
+      <view class="rule-desc">{{detailData.tem_desc}}</view>
+      <view class="rule-choose">
+        <view class="{{temid == index ? 'active' : 'inactive'}}" wx:for="{{tem}}" wx:key="index" bindtap="toggleTem" data-id="{{index}}">{{item}}</view>
+      </view>
+     </view>
+     <!-- 糖 -->
+     <view class="rule-sugar" wx:if="{{sugar.length >= 2}}">
+      <view class="rule-desc">{{detailData.sugar_desc}}</view>
+      <view class="rule-choose">
+        <view class="{{sugarid == index ? 'active' : 'inactive'}}" wx:for="{{sugar}}" wx:key="index" bindtap="toggleSugar" data-id="{{index}}">{{item}}</view>
+      </view>
+     </view>
+     <!-- 奶油 -->
+     <view class="rule-cream" wx:if="{{cream.length >= 2}}">
+      <view class="rule-desc">{{detailData.cream_desc}}</view>
+      <view class="rule-choose">
+        <view class="{{creamid == index ? 'active' : 'inactive'}}" wx:for="{{cream}}" wx:key="index" bindtap="toggleCream" data-id="{{index}}">{{item}}</view>
+      </view>
+     </view>
+     <!-- 牛奶 -->
+     <view class="rule-milk" wx:if="{{milk.length >= 2}}">
+      <view class="rule-desc">{{detailData.milk_desc}}</view>
+      <view class="rule-choose">
+        <view class="{{milkid == index ? 'active' : 'inactive'}}" wx:for="{{milk}}" wx:key="index" bindtap="toggleMilk" data-id="{{index}}">{{item}}</view>
+      </view>
+     </view>
+    </view>
+    <!-- 卡片商品数量 -->
+    <view class="num">
+      <view class="num-left">选择数量</view>
+      <van-stepper value="{{ goodnum }}" bind:change="onChange" theme="round" button-size="22" plus-class="plus" minus-class="minus" bind:plus="plus" bind:minus="minus"/>
+    </view>
+    <!-- 卡片商品描述 -->
+    <view class="desc">
+      <view class="desc-title">商品描述</view>
+      <view class="desc-text">{{detailData.desc}}</view>
+    </view>
+    <!-- 上拉卡片空白处 -->
+    <view class="block"></view>
+  </view>
+  <!-- 底部栏 -->
+  <view class="foot">
+    <van-goods-action>
+      <van-goods-action-icon icon="bag-o" text="购物袋" bindtap="toCart" />
+      <van-goods-action-icon icon="like-o" text="未收藏" wx:if="{{!isCollected}}" bindtap="collect" />
+      <van-goods-action-icon icon="like" text="已收藏" wx:if="{{isCollected}}" bindtap="cancelCollect"/>
+      <van-goods-action-button bindtap="addCart" color="#738fe3" text="加入购物袋" />
+      <van-goods-action-button bindtap="buy" color="#1631b2" text="立即购买" />
+    </van-goods-action>
+  </view>
+</view>

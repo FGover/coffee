@@ -1,0 +1,68 @@
+.person {
+  position: relative;
+  background-color: #f7f7f7;
+}
+
+.top-bg {
+  width: 750rpx;
+  height: 200rpx;
+  background-color: #0c34ba;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 88%;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 20rpx 20rpx 20rpx 0;
+  top: 150rpx;
+  left: 5%;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.item {
+  width: 200rpx;
+  height: 350rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.img>image {
+  width: 100%;
+  height: 100%;
+}
+
+.name {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.enname {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgb(143, 142, 142);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.price {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #0c34ba;
+}
+
