@@ -119,6 +119,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/myOrder/myOrder",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

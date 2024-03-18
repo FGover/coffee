@@ -4,10 +4,8 @@ Page({
   data: {
     cartList: [],
     checked: false,
-    // checkedSon: true,
     result: [],
     // 未加.00价格
-    // allprice: '',
     // 处理好加.00价格
     okprice: 0,
     show: true,
@@ -284,6 +282,7 @@ Page({
 
   // 单独选择按钮
   onChangeson(e) {
+    console.log(e);
     // 商品的sid布尔值
     console.log(e.detail);
     let that = this

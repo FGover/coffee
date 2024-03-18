@@ -231,12 +231,36 @@ Page({
 
   // 立即购买
   buy() {
+    const token = wx.getStorageSync('token')
     let pid = this.data.detailData.pid
     let goodnum = this.data.goodnum
     let rule = `${this.data.tem[this.data.temid]}/${this.data.sugar[this.data.sugarid]}/${this.data.cream[this.data.creamid]}/${this.data.milk[this.data.milkid]}`
-    wx.navigateTo({
-      url: '/pages/order/order?pid=' + pid + '&goodnum=' + goodnum + '&rule=' + rule,
-    })
+    if(token) {
+      var tokenString = wx.getStorageSync('token')
+      // 用户已登录
+      request({
+        url: 'http://www.kangliuyong.com:10002/addShopcart',
+        method: 'POST',
+        header: {
+          "Content-Type": 'application/x-www-form-urlencoded;charset=utf-8'
+        },
+        data: {
+          pid,
+          count: goodnum,
+          rule,
+          appkey: 'U2FsdGVkX19WSQ59Cg+Fj9jNZPxRC5y0xB1iV06BeNA=',
+          tokenString: tokenString
+        }
+      }).then(res=>{
+        let sids = []
+        console.log(res.data.sid);
+        sids.push(res.data.sid)
+        wx.navigateTo({
+          // url: '/pages/order/order?pid=' + pid + '&goodnum=' + goodnum + '&rule=' + rule + '&sids=' + sids,
+          url: '/pages/order/order?sids=' + sids,
+        })
+      })
+    }
   },
 
   onLoad(options) {
